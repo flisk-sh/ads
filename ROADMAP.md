@@ -27,6 +27,17 @@ Ranker lists products; a **brand** is the company or maker behind one or more of
 - [ ] Claim a brand: the maker proves ownership (GitHub org or domain) and then manages its ads here.
 - [ ] Launch calendar: upcoming launches by brand, shown on ranker.
 
+## More placements: tools, studio, readme-score, labs, learn
+
+Same "Sponsored" card and the same edge endpoint as ranker and grow, one placement id per site.
+
+- [ ] [flisk-tools](https://github.com/flisk-sh/flisk-tools) (tools.flisk.si): a sponsored tool card in the store list, matched to the tool's category.
+- [ ] [studio](https://github.com/flisk-sh/studio) (studio.flisk.si): one quiet card after a batch finishes, never during the work.
+- [ ] [readme-score](https://github.com/flisk-sh/readme-score) (readme.flisk.si): a sponsored tip next to the score, for dev tools that fix a miss.
+- [ ] [flisk-labs](https://github.com/flisk-sh/flisk-labs) (practice.flisk.si): a sponsored card at the end of a lab.
+- [ ] [learn.flisk.si](https://learn.flisk.si/): a sponsored card beside lessons, for courses and tools for learners.
+- [ ] Advertisers pick any of these in the placement list; stats split per site.
+
 ## Budgets and payments (with founder)
 
 founder.flisk.si already has monthly spend caps per kind (`llm`, `ads`, `infra`, `mail`); `ads` starts at $0, so ads are off until the owner sets a cap.
@@ -46,7 +57,7 @@ founder.flisk.si already has monthly spend caps per kind (`llm`, `ads`, `infra`,
 
 ## Later
 
-- [ ] More placements (chat, pages, tools).
+- [ ] More placements (chat, pages).
 - [ ] Ad formats beyond a text card (logo strip, launch banner).
 
 ## Rules

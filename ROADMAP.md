@@ -3,10 +3,22 @@
 ads.flisk.si is where advertisers manage ads that show across Flisk products.
 First placements: **ranker** (ranker.flisk.si) and **grow** (grow.flisk.si).
 
+## How it is built (same shape as founder)
+
+- Cloudflare Worker (`src/index.js`) with a D1 database `ads`; schema in `schema.sql`, applied by hand (the user's call).
+- The page: React + Vite in `web/`, built with Astryx and the **chocolate** theme, embedded into the Worker (`scripts/embed-web.mjs` -> `src/app.generated.js`).
+- The shared Flisk top bar (`https://flisk.si/assets/bar.js`, product "Ads").
+- Sign-in through login.flisk.si (public key only) and a signed session cookie; `/auth/dev` only on localhost.
+- Local preview with `bun scripts/dev.mjs` (Bun + SQLite), tests with `bun test`.
+- The plan also goes into an openspec change (`openspec/changes/add-ads-manager/`: proposal, design, tasks, specs).
+
 ## Now: the manager UI
 
 - [ ] Sign in with the shared Flisk login.
-- [ ] Create, edit, pause and delete an ad: title, short text, link, logo.
+- [ ] Three steps in plain words: create a **brand**, then a **campaign**, then an **ad** (title, short text, link, logo).
+- [ ] Each campaign sets a daily and a monthly budget with a hard cap; nothing spends past it.
+- [ ] Nothing goes live without approval: the advertiser says yes to the budget, and an admin approves the ad.
+- [ ] Edit, pause and delete at any time.
 - [ ] Pick placements: ranker, grow (one or both).
 - [ ] Per-ad stats: impressions, clicks, CTR, by placement and by day.
 - [ ] Admin review queue: an ad shows only after it is approved.
@@ -37,6 +49,11 @@ Same "Sponsored" card and the same edge endpoint as ranker and grow, one placeme
 - [ ] [flisk-labs](https://github.com/flisk-sh/flisk-labs) (practice.flisk.si): a sponsored card at the end of a lab.
 - [ ] [learn.flisk.si](https://learn.flisk.si/): a sponsored card beside lessons, for courses and tools for learners.
 - [ ] Advertisers pick any of these in the placement list; stats split per site.
+
+## Paid ad networks: Coming soon
+
+- [ ] Google, Meta and X show in the list as "Coming soon" (with their logos), not clickable yet.
+- [ ] When added, they use the same budget caps and the same yes before any spend.
 
 ## Budgets and payments (with founder)
 

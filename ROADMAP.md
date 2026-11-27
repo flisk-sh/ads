@@ -27,9 +27,25 @@ Ranker lists products; a **brand** is the company or maker behind one or more of
 - [ ] Claim a brand: the maker proves ownership (GitHub org or domain) and then manages its ads here.
 - [ ] Launch calendar: upcoming launches by brand, shown on ranker.
 
+## Budgets and payments (with founder)
+
+founder.flisk.si already has monthly spend caps per kind (`llm`, `ads`, `infra`, `mail`); `ads` starts at $0, so ads are off until the owner sets a cap.
+
+- [ ] Each campaign has a daily and a monthly budget; it stops serving the moment either is spent.
+- [ ] Founder can buy ads here: a spend is approved against founder's `ads` cap and reserved at once, so two approvals cannot go over the cap together.
+- [ ] The founder brain never starts ad spend by itself; the owner approves every ad budget.
+- [ ] Payments: top up a prepaid balance (card), invoices, refunds of unspent balance.
+- [ ] Spend report per campaign and per placement, matching what founder shows.
+
+## Quality, north star and scale
+
+- [ ] North star: paid clicks that reach a launch page each week (tracked as a number, no personal data).
+- [ ] GEL on the repo from day one (`gel init`), every guard set to block; the GEL score shows in the README.
+- [ ] Ad serving is a cached edge endpoint, so ranker and grow traffic spikes never hit the database on every view.
+- [ ] Rate limits and fraud checks on clicks (repeat clicks and bots are not billed).
+
 ## Later
 
-- [ ] Self-serve payments.
 - [ ] More placements (chat, pages, tools).
 - [ ] Ad formats beyond a text card (logo strip, launch banner).
 
